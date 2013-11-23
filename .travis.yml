@@ -6,7 +6,8 @@ go:
 before_install:
         sudo apt-get update &&
         sudo apt-get install llvm-3.2 &&
-        sudo apt-get install clang
+        sudo apt-get install clang &&
+        sudo ln -s /usr/bin/llvm-config-3.2 /usr/local/bin/llvm-config
 
 install:
         export CGO_CFLAGS="`llvm-config --cflags`" &&
