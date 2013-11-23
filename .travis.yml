@@ -5,10 +5,11 @@ go:
 
 before_install:
         sudo apt-get update &&
-        sudo apt-get install llvm &&
+        sudo apt-get install llvm-3.2 &&
         sudo apt-get install clang
 
 install:
+        go get github.com/axw/llgo/build
         go build ./cmd/llgo-dist &&
         ./llgo-dist
 
