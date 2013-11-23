@@ -1,0 +1,15 @@
+language: go
+
+go:
+        - 1.0
+
+before_install:
+        sudo apt-get update
+        sudo apt-get install llvm
+        sudo apt-get install clang
+
+install:
+        go build ./cmd/llgo-dist
+        ./llgo-dist
+
+script: go test ./llgo
