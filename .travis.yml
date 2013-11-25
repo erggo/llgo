@@ -15,5 +15,6 @@ install:
         go get github.com/axw/llgo/build &&
         go build ./cmd/llgo-dist &&
         ./llgo-dist
+        export PATH=$PATH:$PWD
 
 script: go test ./llgo
